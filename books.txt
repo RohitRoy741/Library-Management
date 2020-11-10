@@ -1,0 +1,11 @@
+1,Introduction To Algorithms,Cormen,Computer Science,2048.00,2003,30
+2,Data Strcutures,Mahesh Jangid,Computer Science,500.00,2019,50
+3,Complete Reference Java,Herbert Schildt,Computer Science,1500.00,2019,30
+4,Learning Python,Mark Lutz,Computer Science,3500.00,2018,50
+5,Programming Python,Mark Lutz,Computer Science,5000.00,2018,50
+6,Three Mistakes of My Life,Chetan Bhagat,Fiction,500.00,2007,10
+7,Lord Of The Rings,J R R Tolkien,Fiction,1000.00,1990,10
+8,Hobbit,J R R Tolkien,Fiction,1500.00,1990,10
+9,Principia Mathematica,Issac Newton,Mathematics,1120.00,1600,10
+10,Eulerian Mathematics,Euler,Mathematics,1000.00,1700,10
+END
