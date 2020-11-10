@@ -17,7 +17,7 @@ This is a command line library management application in C.
 ### Facilities Under Development
 -> Admin Login
 -> Signup
-##How To Use?
+## How To Use?
 -> Clone the repo locally
 -> Compile the header files,i.e,books.h and Members.h using command line
 -> Compile Main.c and execute the a.exe
