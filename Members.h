@@ -255,3 +255,19 @@ void ChangePassword(int index)
     }
     printf("\nWrong Password\n");
 } 
+void remove_member(int reg)
+{
+    for(int i=0;i<number_of_members;i++)
+    {
+        if(m[i].registration_number==reg)
+        {
+            for(int j=i;j<number_of_members;j++)
+            {
+                m[j] = m[j+1];
+            }
+            number_of_members--;
+            close_member();
+            break;
+        }
+    }
+}

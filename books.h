@@ -174,11 +174,25 @@ void print_book(int index)
 {
     index = search_id(index);
     for(int i=0;i<43;i++)
-        printf("*");
+        printf("-");
     printf("\n");
-    printf("|%-10s|%-30s|","NAME",books[index].name);
+    printf("|%-15s|%-30s|","Name",books[index].name);
     printf("\n");
     for(int i=0;i<43;i++)
-        printf("*");
+        printf("-");
     printf("\n");
+}
+void remove_book(int id)
+{
+    int index = search_id(id);
+    if(index==-1)
+    {
+        return;
+    }
+    for(int i=index;i<number_of_books;i++)
+    {
+        books[i] = books[i+1];
+    }
+    number_of_books--;
+    close_books();
 }
