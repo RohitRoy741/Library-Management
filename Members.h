@@ -197,7 +197,7 @@ void close_member()
         for(int j=0;j<m[i].current;j++)
             p[j] = m[i].book_issued[j].id;
         fprintf(fp,"%d,%s,%s,%llu,%d,%d,%d,%d\n",m[i].registration_number,m[i].password,m[i].name,m[i].mobile,m[i].current,p[0],p[1],p[2]);
-        fprintf(fp,"END");
     } 
+    fprintf(fp,"END");
     fclose(fp);
 }
