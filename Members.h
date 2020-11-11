@@ -1,4 +1,5 @@
 #include "books.h"
+#include<time.h>
 #define hr1 for(int i=0;i<92;i++) printf("-");
 typedef struct member
 {
@@ -168,7 +169,20 @@ void issue_member(int index,char name[])
         int x = m[index].current;
         m[index].book_issued[x] = books[i];
         m[index].current++;
-        //printf("\n%d\n",m[i].current); 
+        //printf("\n%d\n",m[i].current);
+        FILE *fp;
+        time_t t;
+        time(&t);
+        char filename[50];
+        sprintf(filename,"%ld",m[index].registration_number);
+        strcat(filename,".txt");
+        fp = fopen(filename,"a");
+        fprintf(fp,"\n**********************************\n");
+        fprintf(fp,"\nBook Issued On %s\n",ctime(&t));
+        fprintf(fp,"\nBook details:\n");
+        fprintf(fp,"\nID: %d\n",books[i].id);
+        fprintf(fp,"\nName: %s\n",books[i].name);
+        fprintf(fp,"\n**********************************\n");
     }
 }
 void return_member(int index,char name[])
@@ -177,6 +191,19 @@ void return_member(int index,char name[])
     {
         if(strcmp(m[index].book_issued[i].name,name)==0)
         {
+            FILE *fp;
+            time_t t;
+            time(&t);
+            char filename[50];
+            sprintf(filename,"%ld",m[index].registration_number);
+            strcat(filename,".txt");
+            fp = fopen(filename,"a");
+            fprintf(fp,"\n**********************************\n");
+            fprintf(fp,"\nBook Returned On %s\n",ctime(&t));
+            fprintf(fp,"\nBook details:\n");
+            fprintf(fp,"\nID: %d\n",m[index].book_issued[i].id);
+            fprintf(fp,"\nName: %s\n",m[index].book_issued[i].name);
+            fprintf(fp,"\n**********************************\n");
             m[index].book_issued[i].id = -1;
             m[index].book_issued[i].price = -1;
             m[index].book_issued[i].publication_year = -1;
