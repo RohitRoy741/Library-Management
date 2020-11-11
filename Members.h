@@ -201,3 +201,14 @@ void close_member()
     fprintf(fp,"END");
     fclose(fp);
 }
+void Signup(long int reg,char name[],char password[],unsigned long long mobile)
+{
+    m[number_of_members].registration_number = reg;
+    m[number_of_members].mobile = mobile;
+    strcpy(m[number_of_members].name,name);
+    strcpy(m[number_of_members].password,password);
+    m[number_of_members].current = 0;
+    number_of_members++;
+    close_member();
+    printf("\nHello %s, please login to continue\n",name);
+}   

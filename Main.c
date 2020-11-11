@@ -2,8 +2,9 @@
 void LibraryMenu()
 {
     printf("\n************************Welcome to Fairy Library*****************\n");
-    printf("1 Login\n");
-    printf("2 Exit\n");
+    printf("1. Login\n");
+    printf("2. Signup\n");
+    printf("3. Exit\n");
 }
 int main()
 {
@@ -14,6 +15,7 @@ int main()
     {
         LibraryMenu();
         printf("Enter your option: ");
+        fflush(stdin);
         scanf("%d",&option);
         fflush(stdin);
         if(option==1)
@@ -33,6 +35,7 @@ int main()
             }
             else
             {
+                printf("\nHello %s, Fairy Library welcomes you!\n",m[index].name);
                 int op;
                 do
                 {
@@ -60,8 +63,27 @@ int main()
                 
             }
         }
-    }while(option==1);
+        else if(option==2)
+        {
+            long int reg;
+            unsigned long long int mob;
+            char name[50],password[50];
+            printf("\nEnter your registration number: ");
+            scanf("%ld",&reg);
+            fflush(stdin);
+            printf("Enter your name: ");
+            gets(name);
+            fflush(stdin);
+            printf("Enter your password: ");
+            gets(password);
+            fflush(stdin);
+            printf("Enter your mobile number: ");
+            scanf("%llu",&mob);
+            Signup(reg,name,password,mob);
+            initalize_members();
+
+        }
+    }while(option!=3);
     close_books();
     close_member();
-    
 }
