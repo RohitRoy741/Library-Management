@@ -130,7 +130,8 @@ void MemberMenu()
     printf("\n2. Check your records");
     printf("\n3. Issue a book");
     printf("\n4. Return a book");
-    printf("\n5. Exit");
+    printf("\n5. Change Password");
+    printf("\n6. Exit");
     printf("\nEnter your choice: ");
 }
 void print_member(int i)
@@ -238,4 +239,19 @@ void Signup(long int reg,char name[],char password[],unsigned long long mobile)
     number_of_members++;
     close_member();
     printf("\nHello %s, please login to continue\n",name);
-}   
+}  
+void ChangePassword(int index)
+{
+    printf("\nEnter your old password: ");
+    char password[50];
+    fflush(stdin);
+    gets(password);
+    if(strcmp(password,m[index].password)==0)
+    {
+        printf("Enter new password: ");
+        gets(password);
+        strcpy(m[index].password,password);
+        printf("\nPassword Changed\n");
+    }
+    printf("\nWrong Password\n");
+} 

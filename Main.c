@@ -57,9 +57,11 @@ int main()
                                 gets(name);
                                 return_member(index,name);
                                 break;
+                        case 5: ChangePassword(index);
+                                break;
                     }
                 
-                } while (op!=5);
+                } while (op!=6);
                 
             }
         }
